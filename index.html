@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#181a1b" />
+    <meta
+      name="description"
+      content="Undangan pernikahan digital — silakan hadir dan berikan doa restu."
+    />
+    <title>Undangan Pernikahan</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23181a1b'/%3E%3Cpath d='M32 49C18 40 11 31 15 22c4-8 14-7 17 0 3-7 13-8 17 0 4 9-3 18-17 27Z' fill='%23d7b88b'/%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="is-locked">
+    <!-- LAYAR PEMBUKA -->
+    <section class="invitation-cover" id="invitationCover" aria-labelledby="coverTitle">
+      <div class="cover-photo" aria-hidden="true"></div>
+      <div class="cover-shade" aria-hidden="true"></div>
+      <div class="cover-paper paper-texture">
+        <p class="eyebrow">The Wedding of</p>
+        <h1 id="coverTitle" class="cover-names">
+          <span data-bind="groomShort">[NAMA PRIA]</span>
+          <span class="ampersand">&amp;</span>
+          <span data-bind="brideShort">[NAMA WANITA]</span>
+        </h1>
+        <p class="cover-date" data-bind="shortDate">[TANGGAL ACARA]</p>
+
+        <div class="guest-card">
+          <small>Kepada Yth. Bapak/Ibu/Saudara/i</small>
+          <strong id="guestName">Tamu Undangan</strong>
+        </div>
+
+        <button class="button button-dark" id="openInvitation" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 6.5h18v11H3zM3.5 7l8.5 6 8.5-6" />
+          </svg>
+          Buka Undangan
+        </button>
+        <p class="cover-note">Mohon maaf apabila terdapat kesalahan penulisan nama dan gelar.</p>
+      </div>
+    </section>
+
+    <!-- KONTEN UTAMA -->
+    <main id="mainContent">
+      <section class="hero dark-section" id="home">
+        <div class="hero-image" role="img" aria-label="Foto pasangan pengantin"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content reveal">
+          <p class="eyebrow light">The Wedding of</p>
+          <h2 class="display-names">
+            <span data-bind="groomShort">[NAMA PRIA]</span>
+            <span>&amp;</span>
+            <span data-bind="brideShort">[NAMA WANITA]</span>
+          </h2>
+          <p class="hero-date" data-bind="fullDate">[HARI, TANGGAL ACARA]</p>
+          <a class="scroll-cue" href="#couple" aria-label="Lihat undangan">
+            <span>SCROLL</span>
+            <i></i>
+          </a>
+        </div>
+      </section>
+
+      <section class="quote-section paper-texture" id="couple">
+        <div class="ornament-line reveal" aria-hidden="true"><span>✦</span></div>
+        <blockquote class="reveal">
+          “Dan di antara tanda-tanda kekuasaan-Nya ialah diciptakan-Nya untukmu
+          pasangan hidup dari jenismu sendiri, supaya kamu mendapat ketenangan dan
+          dijadikan-Nya di antaramu rasa kasih dan sayang.”
+        </blockquote>
+        <p class="verse reveal">QS. Ar-Rum: 21</p>
+
+        <div class="section-heading reveal">
+          <p class="eyebrow">Maha Suci Allah yang menciptakan makhluk-Nya berpasang-pasangan</p>
+          <h2>Mempelai</h2>
+        </div>
+
+        <div class="couple-grid">
+          <article class="person-card reveal">
+            <div class="portrait portrait-groom">
+              <img src="assets/couple-1.jpeg" alt="Foto mempelai pria" />
+            </div>
+            <p class="script-name" data-bind="groomShort">[NAMA PRIA]</p>
+            <h3 data-bind="groomFull">[NAMA LENGKAP MEMPELAI PRIA]</h3>
+            <p>
+              <span data-bind="groomChild">[PUTRA KE-...]</span><br />
+              Bapak <span data-bind="groomFather">[NAMA AYAH]</span> &amp;<br />
+              Ibu <span data-bind="groomMother">[NAMA IBU]</span>
+            </p>
+          </article>
+
+          <div class="couple-and reveal" aria-hidden="true">&amp;</div>
+
+          <article class="person-card reveal">
+            <div class="portrait portrait-bride">
+              <img src="assets/couple-3.jpeg" alt="Foto mempelai wanita" />
+            </div>
+            <p class="script-name" data-bind="brideShort">[NAMA WANITA]</p>
+            <h3 data-bind="brideFull">[NAMA LENGKAP MEMPELAI WANITA]</h3>
+            <p>
+              <span data-bind="brideChild">[PUTRI KE-...]</span><br />
+              Bapak <span data-bind="brideFather">[NAMA AYAH]</span> &amp;<br />
+              Ibu <span data-bind="brideMother">[NAMA IBU]</span>
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="countdown-section dark-section" id="event">
+        <div class="section-heading light reveal">
+          <p class="eyebrow light">Save the date</p>
+          <h2>Menuju Hari Bahagia</h2>
+        </div>
+        <div class="countdown reveal" aria-label="Hitung mundur menuju acara">
+          <div><strong id="days">00</strong><span>Hari</span></div>
+          <div><strong id="hours">00</strong><span>Jam</span></div>
+          <div><strong id="minutes">00</strong><span>Menit</span></div>
+          <div><strong id="seconds">00</strong><span>Detik</span></div>
+        </div>
+
+        <div class="event-cards">
+          <article class="event-card paper-texture reveal">
+            <p class="eyebrow">Akad Nikah</p>
+            <div class="date-mark">
+              <strong data-bind="ceremonyDay">[03]</strong>
+              <span data-bind="ceremonyMonthYear">[OKTOBER 2026]</span>
+            </div>
+            <p><b data-bind="ceremonyTime">[07.00 WIB – SELESAI]</b></p>
+            <p data-bind="ceremonyVenue">[TEMPAT AKAD NIKAH]</p>
+            <p class="address" data-bind="ceremonyAddress">[ALAMAT LENGKAP AKAD]</p>
+            <a class="button button-outline map-link" href="#" target="_blank" rel="noopener">
+              Lihat Lokasi
+            </a>
+          </article>
+
+          <article class="event-card paper-texture reveal">
+            <p class="eyebrow">Resepsi / Unduh Mantu</p>
+            <div class="date-mark">
+              <strong data-bind="receptionDay">[06]</strong>
+              <span data-bind="receptionMonthYear">[SEPTEMBER 2026]</span>
+            </div>
+            <p><b data-bind="receptionTime">[17.00 WIB – SELESAI]</b></p>
+            <p data-bind="receptionVenue">[TEMPAT RESEPSI]</p>
+            <p class="address" data-bind="receptionAddress">[ALAMAT LENGKAP RESEPSI]</p>
+            <a class="button button-outline map-link" href="#" target="_blank" rel="noopener">
+              Lihat Lokasi
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <section class="gallery-section paper-texture" id="gallery">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Our moments</p>
+          <h2>Galeri</h2>
+        </div>
+        <div class="gallery-grid">
+          <figure class="gallery-main reveal">
+            <img src="assets/couple-2.jpeg" alt="Pasangan pengantin saling memandang" loading="lazy" />
+          </figure>
+          <figure class="reveal">
+            <img src="assets/couple-1.jpeg" alt="Foto adat pasangan pengantin" loading="lazy" />
+          </figure>
+          <figure class="reveal">
+            <img src="assets/couple-3.jpeg" alt="Potret pasangan pengantin" loading="lazy" />
+          </figure>
+        </div>
+      </section>
+
+      <section class="gift-section dark-section" id="gift">
+        <div class="section-heading light reveal">
+          <p class="eyebrow light">Tanda kasih</p>
+          <h2>Wedding Gift</h2>
+          <p>
+            Doa restu Anda adalah hadiah terindah. Namun jika ingin memberikan tanda kasih,
+            dapat disampaikan melalui rekening berikut.
+          </p>
+        </div>
+        <div class="bank-card reveal">
+          <span class="bank-label" data-bind="bankName">[NAMA BANK]</span>
+          <strong id="accountNumber" data-bind="accountNumber">[NOMOR REKENING]</strong>
+          <span>a.n. <span data-bind="accountName">[NAMA PEMILIK REKENING]</span></span>
+          <button class="button button-gold" id="copyAccount" type="button">Salin Rekening</button>
+          <small id="copyStatus" aria-live="polite"></small>
+        </div>
+      </section>
+
+      <footer class="footer paper-texture">
+        <p class="eyebrow">Terima kasih</p>
+        <p>
+          Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i
+          berkenan hadir untuk memberikan doa restu.
+        </p>
+        <p class="footer-names">
+          <span data-bind="groomShort">[NAMA PRIA]</span> &amp;
+          <span data-bind="brideShort">[NAMA WANITA]</span>
+        </p>
+        <small>&copy; <span id="currentYear"></span> — Wedding Invitation</small>
+      </footer>
+    </main>
+
+    <!-- NAVIGASI -->
+    <nav class="bottom-nav" aria-label="Navigasi undangan">
+      <a href="#home" aria-label="Beranda"><span>⌂</span><small>Home</small></a>
+      <a href="#couple" aria-label="Mempelai"><span>♡</span><small>Mempelai</small></a>
+      <a href="#event" aria-label="Acara"><span>▣</span><small>Acara</small></a>
+      <a href="#gallery" aria-label="Galeri"><span>◇</span><small>Galeri</small></a>
+      <a href="#gift" aria-label="Hadiah"><span>♧</span><small>Gift</small></a>
+    </nav>
+
+    <script src="script.js"></script>
+  </body>
+</html>
