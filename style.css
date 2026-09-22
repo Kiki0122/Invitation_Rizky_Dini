@@ -127,11 +127,6 @@ button {
   background: var(--ink);
 }
 
-.button-gold {
-  color: var(--ink);
-  background: var(--gold);
-}
-
 /* COVER */
 .invitation-cover {
   position: fixed;
@@ -177,18 +172,26 @@ button {
 .cover-names {
   display: flex;
   flex-direction: column;
-  margin: .25rem 0 1rem;
+  gap: .12em;
+  margin: .8rem 0 1.2rem;
+  padding: .14em .12em;
   font-family: var(--script);
-  font-size: clamp(4.5rem, 9vw, 8.3rem);
+  font-size: clamp(4rem, 7vw, 7rem);
   font-weight: 400;
-  line-height: .72;
+  line-height: 1.05;
+}
+
+.cover-names > span:not(.ampersand) {
+  display: block;
+  padding: .05em .12em;
 }
 
 .cover-names .ampersand {
-  margin: .08em 0 -.03em;
+  margin: -.08em 0;
   font-family: var(--serif);
-  font-size: .4em;
+  font-size: .32em;
   font-style: italic;
+  line-height: 1.15;
 }
 
 .cover-date {
@@ -279,7 +282,7 @@ button {
   font-family: var(--script);
   font-size: clamp(4.5rem, 12vw, 9.5rem);
   font-weight: 400;
-  line-height: 1;
+  line-height: 1.08;
   text-shadow: 0 6px 30px rgba(0,0,0,.55);
 }
 
@@ -525,6 +528,14 @@ blockquote {
   display: block;
 }
 
+.date-mark .event-weekday {
+  margin-bottom: .4rem;
+  font-family: var(--sans);
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .2em;
+}
+
 .date-mark strong {
   font-size: clamp(4.8rem, 9vw, 7.5rem);
   font-weight: 400;
@@ -547,6 +558,10 @@ blockquote {
   min-height: 3.2em;
   color: var(--muted);
   line-height: 1.35;
+}
+
+.event-card .address:empty {
+  display: none;
 }
 
 .event-card .button {
@@ -596,65 +611,7 @@ blockquote {
   object-position: center 30%;
 }
 
-/* GIFT + FOOTER */
-.gift-section {
-  padding: clamp(5rem, 10vw, 9rem) 1.25rem;
-}
-
-.bank-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: min(520px, 100%);
-  margin: 0 auto;
-  padding: 2rem;
-  border: 1px solid rgba(213,178,123,.5);
-  border-radius: 18px;
-  background: linear-gradient(135deg, #292a2a, #141616);
-  box-shadow: var(--shadow);
-}
-
-.bank-card::after {
-  content: "✦";
-  position: absolute;
-  top: 1.4rem;
-  right: 1.5rem;
-  color: var(--gold);
-}
-
-.bank-label {
-  color: var(--gold);
-  font-family: var(--sans);
-  font-size: .72rem;
-  font-weight: 600;
-  letter-spacing: .18em;
-}
-
-.bank-card > strong {
-  margin: .8rem 0 0;
-  font-family: var(--sans);
-  font-size: clamp(1.4rem, 5vw, 2.4rem);
-  font-weight: 500;
-  letter-spacing: .08em;
-}
-
-.bank-card > span:not(.bank-label) {
-  color: #cbc4bc;
-}
-
-.bank-card .button {
-  margin-top: 1.6rem;
-}
-
-#copyStatus {
-  min-height: 1.5em;
-  margin-top: .4rem;
-  color: var(--gold);
-  font-family: var(--sans);
-  font-size: .68rem;
-}
-
+/* FOOTER */
 .footer {
   padding-bottom: 8rem;
   text-align: center;
@@ -754,7 +711,7 @@ blockquote {
   }
 
   .display-names span:nth-child(2) {
-    margin: -.2em 0;
+    margin: 0;
   }
 
   .couple-grid {
@@ -803,7 +760,10 @@ blockquote {
   }
 
   .cover-names {
-    font-size: clamp(4.2rem, 20vw, 6rem);
+    gap: .08em;
+    margin-top: .55rem;
+    font-size: clamp(3.7rem, 17vw, 5.2rem);
+    line-height: 1.08;
   }
 
   .cover-date {
@@ -875,10 +835,6 @@ blockquote {
     grid-row: auto;
   }
 
-  .bank-card {
-    padding: 1.5rem;
-  }
-
   .bottom-nav {
     right: 10px;
     left: 10px;
@@ -887,8 +843,8 @@ blockquote {
   }
 
   .bottom-nav a {
-    width: 20%;
-    max-width: 62px;
+    width: 25%;
+    max-width: 72px;
   }
 
 }
@@ -900,7 +856,7 @@ blockquote {
   }
 
   .cover-names {
-    font-size: 4.35rem;
+    font-size: 3.9rem;
   }
 
   .countdown span {

@@ -8,6 +8,22 @@ Template undangan statis yang dibuat dengan HTML, CSS, dan JavaScript murni.
 2. Edit nilai pada objek `WEDDING_DATA` di bagian paling atas.
 3. Ganti foto di folder `assets` bila diperlukan. Pertahankan nama file, atau ubah alamat file pada `index.html` dan `style.css`.
 
+## Mengubah countdown
+
+Countdown mengikuti nilai `eventDate` di `script.js`:
+
+```javascript
+eventDate: "2026-10-03T07:00:00+07:00",
+```
+
+Formatnya adalah `TAHUN-BULAN-TANGGAL` diikuti jam acara. Bagian `+07:00` berarti zona waktu WIB.
+
+Contoh untuk 12 Desember 2027 pukul 10.00 WIB:
+
+```javascript
+eventDate: "2027-12-12T10:00:00+07:00",
+```
+
 ## Nama tamu dinamis
 
 Tambahkan `?to=` pada URL. Contoh:

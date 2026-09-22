@@ -3,42 +3,44 @@
    Ganti semua teks di dalam tanda kutip sesuai data acara.
    ========================================================== */
 const WEDDING_DATA = {
-  groomShort: "[NAMA PRIA]",
-  groomFull: "[NAMA LENGKAP MEMPELAI PRIA]",
-  groomChild: "[PUTRA KE-...]",
-  groomFather: "[NAMA AYAH MEMPELAI PRIA]",
-  groomMother: "[NAMA IBU MEMPELAI PRIA]",
+  groomShort: "Rizky",
+  groomFull: "Rizky Pratama",
+  groomChild: "Anak Tunggal",
+  groomFather: "Sapto Ardiono",
+  groomMother: "Dariati",
 
-  brideShort: "[NAMA WANITA]",
-  brideFull: "[NAMA LENGKAP MEMPELAI WANITA]",
-  brideChild: "[PUTRI KE-...]",
-  brideFather: "[NAMA AYAH MEMPELAI WANITA]",
-  brideMother: "[NAMA IBU MEMPELAI WANITA]",
+  brideShort: "Dini",
+  brideFull: "Dini Murjiani",
+  brideChild: "Anak Pertama",
+  brideFather: "Hari Murioko",
+  brideMother: "Elis Suhartini",
 
-  shortDate: "[06 • 09 • 2026]",
-  fullDate: "[MINGGU, 06 SEPTEMBER 2026]",
+  shortDate: "03 • 10 • 2026",
+  fullDate: "SABTU, 03 OKTOBER 2026 • 07.00 WIB",
 
-  ceremonyDay: "[03]",
-  ceremonyMonthYear: "[OKTOBER 2026]",
-  ceremonyTime: "[07.00 WIB – SELESAI]",
-  ceremonyVenue: "[TEMPAT AKAD NIKAH]",
-  ceremonyAddress: "[ALAMAT LENGKAP AKAD NIKAH]",
+  ceremonyWeekday: "SABTU",
+  ceremonyDay: "03",
+  ceremonyMonthYear: "OKTOBER 2026",
+  ceremonyTime: "07.00 WIB – SELESAI",
+  ceremonyVenue: "Di Rumah Mempelai Wanita",
+  ceremonyAddress: "",
 
-  receptionDay: "[06]",
-  receptionMonthYear: "[SEPTEMBER 2026]",
-  receptionTime: "[17.00 WIB – SELESAI]",
-  receptionVenue: "[NAMA GEDUNG / TEMPAT RESEPSI]",
-  receptionAddress: "[ALAMAT LENGKAP RESEPSI]",
+  receptionWeekday: "MINGGU",
+  receptionDay: "06",
+  receptionMonthYear: "SEPTEMBER 2026",
+  receptionTime: "17.00 WIB – SELESAI",
+  receptionVenue: "Gedung Ex. Lap. App Lambau",
+  receptionAddress: "Jl. Lambau, Bareng, Kec. Klojen, Kota Malang",
 
+  /* Target countdown: Akad Nikah, 3 Oktober 2026 pukul 07.00 WIB */
   /* Format waktu: YYYY-MM-DDTHH:mm:ss+07:00 (WIB) */
-  eventDate: "2026-09-06T17:00:00+07:00",
+  eventDate: "2026-10-03T07:00:00+07:00",
 
-  /* Ganti dengan link Google Maps lokasi acara */
-  mapUrl: "https://maps.google.com/",
+  /* Isi alamat Maps akad jika alamat rumah sudah diketahui. */
+  ceremonyMapUrl: "",
+  receptionMapUrl:
+    "https://www.google.com/maps/search/?api=1&query=Gedung%20Ex.%20Lap.%20App%20Lambau%20Jl.%20Lambau%20Bareng%20Klojen%20Kota%20Malang",
 
-  bankName: "[NAMA BANK]",
-  accountNumber: "[NOMOR REKENING]",
-  accountName: "[NAMA PEMILIK REKENING]",
 };
 
 const bindWeddingData = () => {
@@ -50,7 +52,14 @@ const bindWeddingData = () => {
   });
 
   document.querySelectorAll(".map-link").forEach((link) => {
-    link.href = WEDDING_DATA.mapUrl;
+    const mapKey = `${link.dataset.map}MapUrl`;
+    const mapUrl = WEDDING_DATA[mapKey];
+
+    if (mapUrl) {
+      link.href = mapUrl;
+    } else {
+      link.hidden = true;
+    }
   });
 };
 
@@ -86,26 +95,6 @@ const updateCountdown = () => {
   document.getElementById("hours").textContent = String(hours).padStart(2, "0");
   document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
   document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
-};
-
-const setupCopyAccount = () => {
-  const copyButton = document.getElementById("copyAccount");
-  const status = document.getElementById("copyStatus");
-
-  copyButton.addEventListener("click", async () => {
-    const account = WEDDING_DATA.accountNumber;
-
-    try {
-      await navigator.clipboard.writeText(account);
-      status.textContent = "Nomor rekening berhasil disalin.";
-    } catch (error) {
-      status.textContent = `Silakan salin manual: ${account}`;
-    }
-
-    window.setTimeout(() => {
-      status.textContent = "";
-    }, 3000);
-  });
 };
 
 const setupRevealAnimation = () => {
@@ -150,7 +139,6 @@ document.addEventListener("DOMContentLoaded", () => {
   bindWeddingData();
   setGuestName();
   setupInvitationCover();
-  setupCopyAccount();
   setupRevealAnimation();
   setupActiveNavigation();
 

@@ -119,7 +119,7 @@
       <section class="countdown-section dark-section" id="event">
         <div class="section-heading light reveal">
           <p class="eyebrow light">Save the date</p>
-          <h2>Menuju Hari Bahagia</h2>
+          <h2>Menuju Akad Nikah</h2>
         </div>
         <div class="countdown reveal" aria-label="Hitung mundur menuju acara">
           <div><strong id="days">00</strong><span>Hari</span></div>
@@ -132,13 +132,14 @@
           <article class="event-card paper-texture reveal">
             <p class="eyebrow">Akad Nikah</p>
             <div class="date-mark">
+              <span class="event-weekday" data-bind="ceremonyWeekday">[SABTU]</span>
               <strong data-bind="ceremonyDay">[03]</strong>
               <span data-bind="ceremonyMonthYear">[OKTOBER 2026]</span>
             </div>
             <p><b data-bind="ceremonyTime">[07.00 WIB – SELESAI]</b></p>
             <p data-bind="ceremonyVenue">[TEMPAT AKAD NIKAH]</p>
             <p class="address" data-bind="ceremonyAddress">[ALAMAT LENGKAP AKAD]</p>
-            <a class="button button-outline map-link" href="#" target="_blank" rel="noopener">
+            <a class="button button-outline map-link" data-map="ceremony" href="#" target="_blank" rel="noopener">
               Lihat Lokasi
             </a>
           </article>
@@ -146,13 +147,14 @@
           <article class="event-card paper-texture reveal">
             <p class="eyebrow">Resepsi / Unduh Mantu</p>
             <div class="date-mark">
+              <span class="event-weekday" data-bind="receptionWeekday">[MINGGU]</span>
               <strong data-bind="receptionDay">[06]</strong>
               <span data-bind="receptionMonthYear">[SEPTEMBER 2026]</span>
             </div>
             <p><b data-bind="receptionTime">[17.00 WIB – SELESAI]</b></p>
             <p data-bind="receptionVenue">[TEMPAT RESEPSI]</p>
             <p class="address" data-bind="receptionAddress">[ALAMAT LENGKAP RESEPSI]</p>
-            <a class="button button-outline map-link" href="#" target="_blank" rel="noopener">
+            <a class="button button-outline map-link" data-map="reception" href="#" target="_blank" rel="noopener">
               Lihat Lokasi
             </a>
           </article>
@@ -177,24 +179,6 @@
         </div>
       </section>
 
-      <section class="gift-section dark-section" id="gift">
-        <div class="section-heading light reveal">
-          <p class="eyebrow light">Tanda kasih</p>
-          <h2>Wedding Gift</h2>
-          <p>
-            Doa restu Anda adalah hadiah terindah. Namun jika ingin memberikan tanda kasih,
-            dapat disampaikan melalui rekening berikut.
-          </p>
-        </div>
-        <div class="bank-card reveal">
-          <span class="bank-label" data-bind="bankName">[NAMA BANK]</span>
-          <strong id="accountNumber" data-bind="accountNumber">[NOMOR REKENING]</strong>
-          <span>a.n. <span data-bind="accountName">[NAMA PEMILIK REKENING]</span></span>
-          <button class="button button-gold" id="copyAccount" type="button">Salin Rekening</button>
-          <small id="copyStatus" aria-live="polite"></small>
-        </div>
-      </section>
-
       <footer class="footer paper-texture">
         <p class="eyebrow">Terima kasih</p>
         <p>
@@ -215,7 +199,6 @@
       <a href="#couple" aria-label="Mempelai"><span>♡</span><small>Mempelai</small></a>
       <a href="#event" aria-label="Acara"><span>▣</span><small>Acara</small></a>
       <a href="#gallery" aria-label="Galeri"><span>◇</span><small>Galeri</small></a>
-      <a href="#gift" aria-label="Hadiah"><span>♧</span><small>Gift</small></a>
     </nav>
 
     <script src="script.js"></script>
