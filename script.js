@@ -15,8 +15,8 @@ const WEDDING_DATA = {
   brideFather: "Hari Murioko",
   brideMother: "Elis Suhartini",
 
-  shortDate: "03 • 10 • 2026",
-  fullDate: "SABTU, 03 OKTOBER 2026 • 07.00 WIB",
+  shortDate: "06 • 09 • 2026",
+  fullDate: "MINGGU, 06 SEPTEMBER 2026",
 
   ceremonyWeekday: "SABTU",
   ceremonyDay: "03",
