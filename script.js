@@ -15,8 +15,8 @@ const WEDDING_DATA = {
   brideFather: "Hari Murioko",
   brideMother: "Elis Suhartini",
 
-  shortDate: "06 • 09 • 2026",
-  fullDate: "MINGGU, 06 SEPTEMBER 2026",
+  shortDate: "06 • 10 • 2026",
+  fullDate: "MINGGU, 06 Oktober 2026",
 
   ceremonyWeekday: "SABTU",
   ceremonyDay: "03",
@@ -28,7 +28,7 @@ const WEDDING_DATA = {
   receptionWeekday: "MINGGU",
   receptionDay: "06",
   receptionMonthYear: "SEPTEMBER 2026",
-  receptionTime: "17.00 WIB – SELESAI",
+  receptionTime: "17.00 WIB – 21.00 WIB",
   receptionVenue: "Gedung Ex. Lap. App Lambau",
   receptionAddress: "Jl. Lambau, Bareng, Kec. Klojen, Kota Malang",
 
